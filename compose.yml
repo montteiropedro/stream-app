@@ -3,6 +3,7 @@ services:
     image: ruby:3.4.2
     container_name: api
     working_dir: /api
+    env_file: .env
     ports:
       - "3000:3000"
     depends_on:
@@ -10,15 +11,12 @@ services:
     volumes:
       - gems_data:/usr/local/bundle
       - .:/api
-    command: bash -c "bundle && bin/dev"
+    command: bash -c "bundle && bin/setup"
 
   database:
     image: postgres:17-alpine
     container_name: database
     env_file: .env
-    environment:
-      POSTGRES_USER: stream_app
-      POSTGRES_PASSWORD: stream_app
     ports:
       - "5432:5432"
     volumes:
