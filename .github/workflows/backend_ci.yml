@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Prints the current path
-        run: ls -la
+        run: echo .ruby-version
 
       - name: Prints the current path Pedro
         run: pwd
