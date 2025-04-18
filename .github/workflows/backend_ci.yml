@@ -9,13 +9,16 @@ on:
 jobs:
   scan_ruby:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./backend
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Prints the current path
-        run: ls -la
+        run: cd backend && ls -la
 
       - name: Prints the current path Pedro
         run: pwd
