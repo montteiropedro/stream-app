@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Prints the current path
-        run: cd backend && ls -la
+        run: ls -la
 
       - name: Prints the current path Pedro
         run: pwd
