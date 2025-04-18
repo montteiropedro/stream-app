@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Prints the current path
+        run: echo ls -la
+
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -34,7 +37,6 @@ jobs:
         with:
           ruby-version: .ruby-version
           bundler-cache: true
-          paths: 'backend'
 
       - name: Lint code for consistent style
         run: bin/rubocop -f github
