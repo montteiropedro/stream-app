@@ -17,13 +17,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Read ruby version
-        run: echo "RUBY_VERSION=$(cat .ruby-version)" >> $GITHUB_ENV
+      # - name: Read ruby version
+      #   run: echo "RUBY_VERSION=$(cat .ruby-version)" >> $GITHUB_ENV
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: ${{ env.RUBY_VERSION }}
+          ruby-version: .ruby-version
           bundler-cache: true
           working-directory: backend
 
