@@ -24,9 +24,11 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ env.RUBY_VERSION }}
+          bundler-cache: true
+          working-directory: backend
 
-      - name: Install dependecies
-        run: bundle install
+      # - name: Install dependecies
+      #   run: bundle install
 
       - name: Scan for common Rails security vulnerabilities using static analysis
         run: bin/brakeman --no-pager
