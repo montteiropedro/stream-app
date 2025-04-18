@@ -5,11 +5,7 @@ on:
   push:
     branches:
       - '**'
-
-defaults:
-  run:
-    working-directory: ./backend
-
+      
 jobs:
   scan_ruby:
     runs-on: ubuntu-latest
