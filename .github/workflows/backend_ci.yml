@@ -23,6 +23,9 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: false
           working-directory: backend
+      
+      - name: Install gems
+        run: bundle install
 
       - name: Scan for common Rails security vulnerabilities using static analysis
         run: bin/brakeman --no-pager
@@ -43,6 +46,9 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: false
           working-directory: backend
+
+      - name: Install gems
+        run: bundle install
 
       - name: Lint code for consistent style
         run: bin/rubocop -f github
