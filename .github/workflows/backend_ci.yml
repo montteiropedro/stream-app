@@ -17,16 +17,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Prints the current path
-        run: cat .ruby-version
-
-      - name: Prints the current path Pedro
-        run: pwd
+      - name: Read ruby version
+        run: echo "RUBY_VERSION=$(cat .ruby-version)" >> $GITHUB_ENV
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: .ruby-version
+          ruby-version: ${{ env.RUBY_VERSION }}
           bundler-cache: true
 
       - name: Scan for common Rails security vulnerabilities using static analysis
