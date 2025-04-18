@@ -1,8 +1,20 @@
 services:
-  api:
+  frontend:
+    image: node:22.14.0
+    container_name: frontend
+    working_dir: /frontend
+    depends_on:
+      - backend
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./frontend:/frontend
+    command: bash -c "npm install && npm run dev"
+
+  backend:
     image: ruby:3.4.2
-    container_name: api
-    working_dir: /api
+    container_name: backend
+    working_dir: /backend
     env_file: .env
     ports:
       - "3000:3000"
@@ -10,7 +22,7 @@ services:
       - database
     volumes:
       - gems_data:/usr/local/bundle
-      - .:/api
+      - ./backend:/backend
     command: bash -c "bundle && bin/setup"
 
   database:
