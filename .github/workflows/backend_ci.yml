@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Prints the current path
-        run: echo ls -la
+        run: ls -la
 
       - name: Checkout code
         uses: actions/checkout@v4
