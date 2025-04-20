@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 @import "tailwindcss";
 
 @theme {
     --color-black-main: #0F0F0F;
+    --color-red-main: #F445451A;
 }
