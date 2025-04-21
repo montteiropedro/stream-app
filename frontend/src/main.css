@@ -3,5 +3,7 @@
 
 @theme {
     --color-black-main: #0F0F0F;
+    --color-black-secondary: #D9D9D91A;
     --color-red-main: #F445451A;
+    --color-red-secondary: #F44545
 }
